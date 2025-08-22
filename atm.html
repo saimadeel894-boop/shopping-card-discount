@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM BALANCE</title>
+</head>
+<body>
+<Script>
+    let balance = 1000;   
+const correctPIN = "1234"; 
+let attempts = 3; 
+
+function withdraw(amount) {
+  if (amount <= balance) {
+    balance -= amount;
+    alert("Withdrawal successful! New Balance: $" + balance);
+  } else {
+    alert("Insufficient balance!");
+  }
+}
+
+while (attempts > 0) {
+  let pin = prompt("Enter your PIN:");
+
+  if (pin === correctPIN) {
+    let amount = Number(prompt("Enter amount to withdraw:"));
+    withdraw(amount);
+    break; 
+  } else {
+    attempts--;
+    alert("Wrong PIN! Attempts left: " + attempts);
+
+    if (attempts === 0) {
+      alert("Card Blocked! Too many wrong attempts.");
+    }
+  }
+}
+
+    
+
+        
+            
+
+            
+        
+    
+</Script>    
+</body>
+</html>
