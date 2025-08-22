@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping card Discount</title>
+</head>
+<body>
+    <script>
+        // Function to calculate discount
+function calculateDiscount(bill) {
+  if (bill > 500) {
+    return bill - (bill * 0.20); // 20% off
+  } else if (bill > 200) {
+    return bill - (bill * 0.10); // 10% off
+  } else {
+    return bill; // no discount
+  }
+}
+
+// Loop for 3 customers
+for (let i = 1; i <= 3; i++) {
+  let bill = Number(prompt("Enter total bill amount for customer " + i));
+  let finalAmount = calculateDiscount(bill);
+  alert("Customer " + i + " will pay: " + finalAmount);
+}
+
+    </script>
+       
+    
+</body>
+</html>
